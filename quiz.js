@@ -7,8 +7,8 @@ const perguntas = [
         respostas: [
             "Celular",
             "Soja",
-            "Televisão",
-            "Controle"
+            "Computador",
+            "Televisão"
         ],
 
         correta: 1
@@ -26,16 +26,47 @@ const perguntas = [
         ],
 
         correta: 0
+    },
+
+    {
+
+        pergunta: "Qual máquina é comum no agronegócio?",
+
+        respostas: [
+            "Trator",
+            "Geladeira",
+            "Drone militar",
+            "Impressora"
+        ],
+
+        correta: 0
     }
 ];
 
-const pergunta = document.getElementById("pergunta");
+const pergunta =
+document.getElementById("pergunta");
 
-const respostas = document.getElementById("respostas");
+const respostas =
+document.getElementById("respostas");
 
-const proxima = document.getElementById("proxima");
+const proxima =
+document.getElementById("proxima");
+
+const resultado =
+document.getElementById("resultado");
+
+const barra =
+document.getElementById("barra");
+
+const acoes =
+document.querySelector(".acoes-finais");
+
+const reiniciar =
+document.getElementById("reiniciar");
 
 let atual = 0;
+
+let pontos = 0;
 
 function carregarPergunta(){
 
@@ -44,16 +75,14 @@ function carregarPergunta(){
     pergunta.innerText =
     perguntas[atual].pergunta;
 
+    atualizarBarra();
+
     perguntas[atual].respostas.forEach((resposta, index) => {
 
         const button =
         document.createElement("button");
 
         button.innerText = resposta;
-
-        button.classList.add("btn");
-
-        button.style.margin = "10px";
 
         button.onclick = () => verificar(index);
 
@@ -63,14 +92,41 @@ function carregarPergunta(){
 
 function verificar(index){
 
-    if(index === perguntas[atual].correta){
+    const correta =
+    perguntas[atual].correta;
 
-        alert("Resposta correta!");
+    const botoes =
+    respostas.querySelectorAll("button");
 
-    }else{
+    botoes.forEach((botao, i) => {
 
-        alert("Resposta errada!");
+        botao.disabled = true;
+
+        if(i === correta){
+
+            botao.style.background =
+            "#4f8a4c";
+
+        }else if(i === index){
+
+            botao.style.background =
+            "#8a4c4c";
+        }
+    });
+
+    if(index === correta){
+
+        pontos++;
     }
+}
+
+function atualizarBarra(){
+
+    const progresso =
+    ((atual) / perguntas.length) * 100;
+
+    barra.style.width =
+    `${progresso}%`;
 }
 
 proxima.onclick = () => {
@@ -83,13 +139,43 @@ proxima.onclick = () => {
 
     }else{
 
-        pergunta.innerText =
-        "Quiz Finalizado!";
-
-        respostas.innerHTML = "";
-
-        proxima.style.display = "none";
+        finalizarQuiz();
     }
+};
+
+function finalizarQuiz(){
+
+    pergunta.innerText =
+    "Quiz Finalizado!";
+
+    respostas.innerHTML = "";
+
+    proxima.style.display = "none";
+
+    barra.style.width = "100%";
+
+    resultado.innerHTML =
+
+    `Você acertou
+    ${pontos} de
+    ${perguntas.length} perguntas!`;
+
+    acoes.style.display = "flex";
 }
+
+reiniciar.onclick = () => {
+
+    atual = 0;
+
+    pontos = 0;
+
+    resultado.innerHTML = "";
+
+    proxima.style.display = "inline-block";
+
+    acoes.style.display = "none";
+
+    carregarPergunta();
+};
 
 carregarPergunta();
