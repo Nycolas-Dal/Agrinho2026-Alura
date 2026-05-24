@@ -323,3 +323,184 @@ body{
         height: 45px;
     }
 }
+
+/* ========================= */
+/* QUIZ */
+/* ========================= */
+
+.quiz-page{
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)),
+    url("../img/agro.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.quiz-card{
+
+    width: 100%;
+    max-width: 750px;
+
+    background: rgba(18, 28, 36, 0.92);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.4);
+}
+
+.quiz-card h1{
+
+    margin-bottom: 30px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#pergunta{
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+
+    font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+/* RESPOSTAS */
+
+#respostas{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+#respostas button{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #23313d;
+
+    color: white;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#respostas button:hover{
+
+    background: #304353;
+
+    transform: translateY(-2px);
+}
+
+/* PROGRESSO */
+
+.progresso{
+
+    width: 100%;
+
+    height: 10px;
+
+    background: rgba(255,255,255,0.1);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    margin-bottom: 35px;
+}
+
+#barra{
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #6e9b5e;
+
+    transition: 0.4s;
+}
+
+/* RESULTADO */
+
+#resultado{
+
+    margin-top: 30px;
+
+    font-size: 1.2rem;
+
+    color: #d8e8d1;
+}
+
+/* AÇÕES FINAIS */
+
+.acoes-finais{
+
+    margin-top: 30px;
+
+    display: none;
+
+    gap: 15px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.voltar{
+
+    background: #3e5f76;
+}
+
+.voltar:hover{
+
+    background: #507892;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 600px){
+
+    .quiz-card{
+
+        padding: 30px 20px;
+    }
+
+    #respostas button{
+
+        padding: 15px;
+    }
+}
