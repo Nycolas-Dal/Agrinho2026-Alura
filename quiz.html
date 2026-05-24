@@ -15,19 +15,46 @@
 
 <body>
 
-    <section class="sobre">
+    <section class="quiz-page">
 
-        <h2>Quiz do Agronegócio</h2>
+        <div class="quiz-card">
 
-        <div id="quiz-container">
+            <h1>Quiz do Agronegócio</h1>
 
-            <h3 id="pergunta"></h3>
+            <div class="progresso">
+
+                <div id="barra"></div>
+
+            </div>
+
+            <h2 id="pergunta"></h2>
 
             <div id="respostas"></div>
 
-            <button class="btn" id="proxima">
+            <button id="proxima" class="btn">
                 Próxima
             </button>
+
+            <div id="resultado"></div>
+
+            <div class="acoes-finais">
+
+                <a href="index.html"
+                id="inicioBtn"
+                class="btn voltar">
+
+                    Voltar ao início
+
+                </a>
+
+                <button id="reiniciar"
+                class="btn">
+
+                    Reiniciar Quiz
+
+                </button>
+
+            </div>
 
         </div>
 
