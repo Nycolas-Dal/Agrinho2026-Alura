@@ -504,3 +504,29 @@ body{
         padding: 15px;
     }
 }
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+
+    width: 100%;
+
+    padding: 25px 20px;
+
+    text-align: center;
+
+    background: #0d141a;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer p{
+
+    color: #b8c4cc;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.5px;
+}
