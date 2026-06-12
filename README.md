@@ -24,9 +24,9 @@ Este projeto foi desenvolvido para o Concurso Agrinho 2026 em parceria com a Alu
 
 ## 🛠️ Tecnologias Utilizadas
 Para o desenvolvimento deste ecossistema Front-End, utilizamos:
-- ![HTML5](https://shields.io) - Para estruturação das páginas.
-- ![CSS3](https://shields.io) - Para estilização, layout e responsividade.
-- ![JavaScript](https://shields.io) - Para mecânica do Quiz e manipulação do DOM.
+- ![HTML5]- Para estruturação das páginas.
+- ![CSS3]- Para estilização, layout e responsividade.
+- ![JavaScript] - Para mecânica do Quiz e manipulação do DOM.
 
 ## 👥 Desenvolvedores / Autores
 - **Nycolas Maçaneiro Dalasen** - *Desenvolvedor Principal* - https://github.com/Nycolas-Dal/Agrinho2026Teste
