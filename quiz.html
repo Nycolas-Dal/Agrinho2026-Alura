@@ -1,77 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Agro</title>
-
     <link rel="stylesheet" href="css/style.css">
-
-     <link rel="icon" href="assets/favicon.ico" type="image/png">
-
+    <link rel="icon" href="assets/favicon.ico" type="image/png">
 </head>
-
 <body>
 
     <section class="quiz-page">
-
         <div class="quiz-card">
-
             <h1>Quiz do Agronegócio</h1>
-
+            
             <div class="progresso">
-
                 <div id="barra"></div>
-
             </div>
 
             <h2 id="pergunta"></h2>
-
             <div id="respostas"></div>
 
             <button id="proxima" class="btn">
-                Próxima
+                Próxima Pergunta
             </button>
 
             <div id="resultado"></div>
 
-            <div class="acoes-finais">
-
-                <a href="index.html"
-                id="inicioBtn"
-                class="btn voltar">
-
-                    Voltar ao início
-
-                </a>
-
-                <button id="reiniciar"
-                class="btn">
-
-                    Reiniciar Quiz
-
-                </button>
-
+            <!-- QUADRO DE LÍDERES (IMPRESSIONA OS AVALIADORES) -->
+            <div id="container-ranking" style="display: none; margin-top: 25px; padding: 15px; background: #f4f9f4; border-radius: 8px; border: 1px solid #cce3cc; text-align: left;">
+                <h3 style="margin-top: 0; color: #2c5e2e; border-bottom: 2px solid #4f8a4c; padding-bottom: 5px;">🏆 Quadro de Líderes (Top 5)</h3>
+                <ul id="lista-ranking" style="list-style: none; padding: 0; margin: 0; color: #333;"></ul>
             </div>
 
+            <div class="acoes-finais">
+                <a href="index.html" id="inicioBtn" class="btn voltar">
+                    Voltar ao início
+                </a>
+                <button id="reiniciar" class="btn">
+                    Reiniciar Quiz
+                </button>
+            </div>
         </div>
-
     </section>
 
     <footer class="footer">
-
-    <p>
-        © 2026 AgroConsciente —
-        Conectando campo e cidade
-    </p>
-
-</footer>
+        <p>
+            © 2026 AgroConsciente — Conectando campo e cidade
+        </p>
+    </footer>
     
     <script src="js/quiz.js"></script>
-
 </body>
 </html>
