@@ -20,6 +20,8 @@ Este projeto foi desenvolvido para o Concurso Agrinho 2026 em parceria com a Alu
 │   └── quiz.js
 └── assets/             # Imagens e mídias
     └── agro.jpg
+    └── favicon.ico
+    
 ```
 
 ## 🛠️ Tecnologias Utilizadas
