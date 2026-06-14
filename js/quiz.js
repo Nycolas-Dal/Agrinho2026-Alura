@@ -190,3 +190,5 @@ reiniciar.onclick = () => {
 
 carregarPergunta();
 
+// Faz o ranking carregar fixo na tela assim que abre o site
+exibirRanking();
