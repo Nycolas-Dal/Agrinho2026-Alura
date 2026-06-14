@@ -132,20 +132,19 @@ function finalizarQuiz() {
     proxima.style.display = "none";
     barra.style.width = "100%";
 
-    // Feedback temático baseado na pontuação para impressionar a banca
+    // Mensagens limpas, a cor verde/vermelha já é controlada pelas classes do CSS
     let feedbackTema = "";
     if (pontos >= 8) {
-        feedbackTema = "<br><strong style='color:#4f8a4c;'>Incrível! Você é um verdadeiro Embaixador do Agro Sustentável! 🌱</strong>";
+        feedbackTema = "<br><strong>Incrível! Você é um verdadeiro Embaixador do Agro Sustentável! 🌱</strong>";
     } else if (pontos >= 5) {
-        feedbackTema = "<br><strong style='color:#d4a373;'>Bom trabalho! Você compreende o equilíbrio entre campo e meio ambiente. 🚜</strong>";
+        feedbackTema = "<br><strong>Bom trabalho! Você compreende o equilíbrio entre campo e meio ambiente. 🚜</strong>";
     } else {
-        feedbackTema = "<br><strong style='color:#8a4c4c;'>Continue estudando! O futuro do nosso planeta depende do conhecimento agroecológico. 📚</strong>";
+        feedbackTema = "<br><strong>Continue estudando! O futuro do nosso planeta depende do conhecimento agroecológico. 📚</strong>";
     }
 
     resultado.innerHTML = `<h3>Você acertou ${pontos} de ${perguntas.length} perguntas!</h3>${feedbackTema}`;
     acoes.style.display = "flex";
 
-    // Salva a pontuação no Ranking automaticamente após 1 segundo
     setTimeout(() => {
         const nomeUsuario = prompt("Digite seu nome para o Quadro de Líderes do Agrinho:");
         if (nomeUsuario) {
@@ -158,10 +157,7 @@ function salvarPontuacao(nome, score) {
     let ranking = JSON.parse(localStorage.getItem("rankingAgrinho")) || [];
     ranking.push({ nome: nome, pontos: score, data: new Date().toLocaleDateString('pt-BR') });
     
-    // Organiza do maior placar para o menor
     ranking.sort((a, b) => b.pontos - a.pontos);
-    
-    // Mantém apenas o Top 5
     ranking = ranking.slice(0, 5);
     
     localStorage.setItem("rankingAgrinho", JSON.stringify(ranking));
@@ -177,10 +173,6 @@ function exibirRanking() {
         ranking.forEach((jogador, i) => {
             const li = document.createElement("li");
             li.innerHTML = `<span><strong>${i+1}º</strong> ${jogador.nome}</span> <span>${jogador.pontos}/${perguntas.length} pts</span>`;
-            li.style.padding = "8px 0";
-            li.style.borderBottom = "1px solid #eee";
-            li.style.display = "flex";
-            li.style.justifyContent = "space-between";
             listaRanking.appendChild(li);
         });
     }
@@ -197,3 +189,4 @@ reiniciar.onclick = () => {
 };
 
 carregarPergunta();
+
