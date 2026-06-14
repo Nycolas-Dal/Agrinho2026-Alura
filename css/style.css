@@ -400,3 +400,42 @@ body{
     color: #d5d5d5;
     line-height: 1.7;
 }
+
+/* ========================= */
+/* ESTILIZAÇÃO DO RANKING (CONCURSO AGRINHO) */
+/* ========================= */
+.ranking-box {
+    display: none;
+    margin-top: 25px;
+    padding: 15px;
+    background: #f4f9f4;
+    border-radius: 8px;
+    border: 1px solid #cce3cc;
+    text-align: left;
+}
+
+.ranking-titulo {
+    margin-top: 0;
+    color: #2c5e2e;
+    border-bottom: 2px solid #4f8a4c;
+    padding-bottom: 5px;
+}
+
+.ranking-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ranking-lista li {
+    color: #2c5e2e;
+    font-size: 1rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ranking-lista li span strong {
+    color: #4f8a4c;
+}
