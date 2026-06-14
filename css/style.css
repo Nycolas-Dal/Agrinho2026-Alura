@@ -28,7 +28,7 @@ body{
     width: 100%;
     min-height: 100vh;
 
-    background-image: url("AGRO.jpg");
+    background-image: url("../assets/AGRO.jpg");
 
     background-size: cover;
     background-position: center;
